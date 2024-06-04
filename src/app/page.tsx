@@ -3,7 +3,8 @@ import ProductList from "../components/ProductList";
 import type { ItemList } from "../types";
 
 async function getData() {
-  const res = await fetch(`${process.env.URL}/api/products`)
+  const apiURL = `${process.env.URL}/api/products`
+  const res = await fetch(apiURL)
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
