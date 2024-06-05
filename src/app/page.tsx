@@ -1,18 +1,17 @@
-import Image from "next/image";
+'use client';
+import { trpc } from "./_trpc/client";
 import ProductList from "../components/ProductList";
-import type { ItemList } from "../types";
+import Loading from "../components/Loading";
 
-async function getData() {
-  const apiURL = `${process.env.URL}/api/products`
-  const res = await fetch(apiURL)
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
+export default function Home() {
+  const response = trpc.getProducts.useQuery();
+  if (response.error) {
+    return <div>Error: {response.error.message}</div>;
   }
-  return res.json()
-}
-
-export default async function Home() {
-  const { items } = await getData() as ItemList
+  const items = response.data;
+  if (!items) {
+    return <Loading />;
+  }
   return (
     <main className="min-h-screen min-w-screen p-24">
      <ProductList items={items} />
