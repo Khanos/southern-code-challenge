@@ -1,30 +1,35 @@
+'use client';
 import Likes from '../../../components/Likes'
 import Comments from '../../../components/Comments'
-import { Item } from '../../../types'
+import Loading from '../../../components/Loading'
+import { trpc } from "../../_trpc/client";
 
 type RouteParams = {
   id: string;
 };
 
-async function getData(id: string) {
-  const apiURL = `${process.env.URL}/api/productById?id=${id}`
-  const res = await fetch(apiURL)
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
-  return res.json()
-}
-
-export default async function Product(props: { params: RouteParams }) {
+export default function Product(props: { params: RouteParams }) {
   const { params } = props;
-  if (!params) {
+  if (!params || !params.id) {
     return null;
   }
-  const id = params.id || 'default';
-  const product = await getData(id) as Item
+  const id = Number(params.id);
+  const response = trpc.getProductById.useQuery(id);
+  if (response.error) {
+    return <div>Error: {response.error.message}</div>;
+  }
+  const product = response.data;
+  if (!product) {
+    return <Loading />;
+  }
 
   return (
-    <section className="text-gray-700 body-font overflow-hidden bg-white">
+    <section className="text-gray-700 body-font overflow-hidden bg-white p-4">
+      <div className='flex justify-center'>
+        <a href='/' className="text-gray-500 hover:text-gray-700 text-lg underline">
+          Go back
+        </a>
+      </div>
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <div className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"></div>
