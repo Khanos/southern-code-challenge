@@ -8,7 +8,6 @@ import { trpc } from "./client";
 export default function Provider({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(() => new QueryClient({}));
   const url = process.env.NEXT_PUBLIC_TRPC_URL || 'http://localhost:3000/api/trpc';
-  console.log('url', url);
   const [trpcClient] = useState(() =>
     trpc.createClient({
       links: [
