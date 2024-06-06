@@ -1,7 +1,9 @@
 export interface Item {
   id: number;
   name: string;
+  author: string;
   description: string;
+  thumbnail: string;
   modelFileName: string;
   likes: number;
   dislikes: number;
