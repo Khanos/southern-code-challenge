@@ -179,7 +179,7 @@ $ curl 'https://southern-code-challenge-6ywwa1e6w-khanos-projects.vercel.app/api
 - [x] Configs to Migrate the database using drizzle.
 - [x] Configs to Seed the database using drizzle.
 - [x] Implement a backend API to manage products.
-- [-] Implement a backend API to manage likes. (Refactor Likes component to use the API)
+- [x] Implement a backend API to manage likes. (Refactor Likes component to use the API)
 - [-] Implement a backend API to manage comments. (Refactor Comments component to use the API)
 - [x] Create a README file with instructions on how to set up and run the project locally.
 - [-] Add test coverage for critical parts of the application. Probably jest and react-testing-library.

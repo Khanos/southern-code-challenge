@@ -12,7 +12,7 @@ export default function Product(props: Item) {
       <h1 className="line-clamp-1 text-lg font-bold">{name}</h1>
       <p className="text-sm text-gray-500 mb-2">by {author}</p>
       <p className="line-clamp-2">{description}</p>
-      <Likes likes={likes} dislikes={dislikes} />
+      <Likes productId={id} likes={likes} dislikes={dislikes} />
       <div className="flex justify-center mt-4">
         <a href={`/product/${id}`} className="w-full text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           See details

@@ -12,3 +12,9 @@ export interface Item {
 export interface ItemList {
   items: Item[];
 }
+
+export interface SetLikesInput {
+  id: number;
+  likes: number;
+  dislikes: number;
+}
