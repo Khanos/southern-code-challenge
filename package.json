@@ -12,6 +12,8 @@
     "db:seed": "npx tsx drizzle/seed.ts"
   },
   "dependencies": {
+    "@react-three/drei": "^9.106.0",
+    "@react-three/fiber": "^8.16.8",
     "@tanstack/react-query": "^4.36.1",
     "@trpc/client": "^10.45.2",
     "@trpc/react-query": "^10.45.2",
@@ -20,7 +22,8 @@
     "drizzle-orm": "^0.31.1",
     "next": "14.2.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "three": "^0.165.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
