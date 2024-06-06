@@ -1,7 +1,9 @@
 'use client';
+
 import Likes from '../../../components/Likes'
 import Comments from '../../../components/Comments'
 import Loading from '../../../components/Loading'
+import ModelBox from '../../../components/ModelBox'
 import { trpc } from "../../_trpc/client";
 
 type RouteParams = {
@@ -33,7 +35,7 @@ export default function Product(props: { params: RouteParams }) {
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <div className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200">
-            
+            <ModelBox modelFileName={product.modelFileName} />
           </div>
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">Lego Collection</h2>

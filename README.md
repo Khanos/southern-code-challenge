@@ -29,10 +29,10 @@
   - **Database**: PostgreSQL
 
   ## Bonus Points
-  - [x] tRPC for API communication
-  - [x] Drizzle ORM for database interactions
-  - [-] Material UI for UI components. **(Used Tailwind CSS instead)**
-  - [-] At least some tests. **(WIP)**
+  - tRPC for API communication
+  - Drizzle ORM for database interactions
+  - Material UI for UI components. **(Used Tailwind CSS instead)**
+  - At least some tests. **(WIP)**
 
   ## Functional Requirements
   ### Frontend
@@ -167,9 +167,9 @@ $ curl 'https://southern-code-challenge-6ywwa1e6w-khanos-projects.vercel.app/api
 - [x] Deploy the application to a hosting platform. I'm using Vercel for this project.
 - [x] Ensure the application is publicly accessible and provide the URL in your submission.
 - [x] Display a list of at least 5 products.
-- [-] Each product includes a thumbnail for the ProductList page.
+- [x] Each product includes a thumbnail for the ProductList page.
 - [x] Display a detail page for each product.
-- [-] Each product includes a 3D model for the ProductDetail page. (Refactor ProductDetail to use React Three Fiber)
+- [x] Each product includes a 3D model for the ProductDetail page. (Refactor ProductDetail to use React Three Fiber)
 - [x] Implement like and dislike buttons/counters.
 - [x] Implement a comments section.
 - [x] Use [tRPC](https://trpc.io/) for type-safe API communication.
