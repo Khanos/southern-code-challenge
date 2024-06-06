@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1717636544009,
-      "tag": "0000_narrow_gargoyle",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1717636572741,
-      "tag": "0001_broad_ultimates",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1717636676564,
-      "tag": "0002_tearful_callisto",
+      "when": 1717680264488,
+      "tag": "0000_sour_maximus",
       "breakpoints": true
     }
   ]

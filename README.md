@@ -138,13 +138,38 @@ To seed the database:
 $ npm run seed
 ```
 
+## API Endpoints
+The API endpoints are managed by tRPC.
+
+### For Products
+```bash
+$ curl https://southern-code-challenge-6ywwa1e6w-khanos-projects.vercel.app/api/trpc/getProducts
+
+$ curl 'https://southern-code-challenge-6ywwa1e6w-khanos-projects.vercel.app/api/trpc/getProductById?batch=1&input=%7B%220%22%3A1%7D' \
+  -H 'Accept: */*' \
+  -H 'Accept-Language: es-419,es;q=0.9' \
+  -H 'Connection: keep-alive' \
+  -H 'DNT: 1' \
+  -H 'Referer: http://localhost:3000/product/1' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36' \
+  -H 'content-type: application/json' \
+  -H 'sec-ch-ua: "Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"'
+```
+
 ## Personal Checklist
 - [x] Create a private GitHub repository for the project.
 - [x] Use pull requests for code reviews, and better maintainability.
 - [x] Deploy the application to a hosting platform. I'm using Vercel for this project.
 - [x] Ensure the application is publicly accessible and provide the URL in your submission.
 - [x] Display a list of at least 5 products.
+- [-] Each product includes a thumbnail for the ProductList page.
 - [x] Display a detail page for each product.
+- [-] Each product includes a 3D model for the ProductDetail page. (Refactor ProductDetail to use React Three Fiber)
 - [x] Implement like and dislike buttons/counters.
 - [x] Implement a comments section.
 - [x] Use [tRPC](https://trpc.io/) for type-safe API communication.
@@ -153,10 +178,12 @@ $ npm run seed
 - [x] Create a schema for the database.
 - [x] Configs to Migrate the database using drizzle.
 - [x] Configs to Seed the database using drizzle.
-- [*] Implement a backend API to manage products, likes, and comments.
+- [x] Implement a backend API to manage products.
+- [-] Implement a backend API to manage likes. (Refactor Likes component to use the API)
+- [-] Implement a backend API to manage comments. (Refactor Comments component to use the API)
 - [x] Create a README file with instructions on how to set up and run the project locally.
 - [-] Add test coverage for critical parts of the application. Probably jest and react-testing-library.
-- [-] Improve the UI with Material UI components.
+- [-] Improve the UI with better styling. (Tailwind CSS)
 - [-] Add a custom domain to the Vercel deployment. ([3dproduct.epilef.app](https://epilef.org))
 - [-] Send email to Southern Code's interviewers with the repository link.
 - [-] Invite Southern Code's interviewers to the repository.

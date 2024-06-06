@@ -1,5 +1,5 @@
 {
-  "id": "4c957bc3-af0e-445f-9992-dd0e52519914",
+  "id": "51006370-dc69-4c22-88d1-7ee2d32a3e98",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -10,15 +10,15 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "serial",
+          "type": "integer",
           "primaryKey": true,
           "notNull": true
         },
         "productId": {
           "name": "productId",
-          "type": "serial",
+          "type": "integer",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "user": {
           "name": "user",
@@ -57,7 +57,15 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {
+        "comments_id_unique": {
+          "name": "comments_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "id"
+          ]
+        }
+      }
     },
     "public.products": {
       "name": "products",
@@ -65,7 +73,7 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "serial",
+          "type": "integer",
           "primaryKey": true,
           "notNull": true
         },
@@ -75,8 +83,20 @@
           "primaryKey": false,
           "notNull": true
         },
+        "author": {
+          "name": "author",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
         "description": {
           "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "thumbnail": {
+          "name": "thumbnail",
           "type": "text",
           "primaryKey": false,
           "notNull": true

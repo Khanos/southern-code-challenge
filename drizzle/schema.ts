@@ -11,7 +11,9 @@ export const ProductsTable = pgTable(
   {
     id: integer('id').primaryKey().unique(),
     name: text('name').notNull(),
+    author: text('author').notNull(),
     description: text('description').notNull(),
+    thumbnail: text('thumbnail').notNull(),
     modelFileName: text('modelFileName').notNull(),
     likes: integer('likes').default(0),
     dislikes: integer('dislikes').default(0),
