@@ -2,6 +2,7 @@
 import { trpc } from "./_trpc/client";
 import ProductList from "../components/ProductList";
 import Loading from "../components/Loading";
+import type { Item } from "../types";
 
 export default function Home() {
   const response = trpc.getProducts.useQuery();
@@ -14,7 +15,7 @@ export default function Home() {
   }
   return (
     <main className="min-h-screen min-w-screen p-24">
-     <ProductList items={items} />
+     <ProductList items={items as Item[]} />
     </main>
   );
 }

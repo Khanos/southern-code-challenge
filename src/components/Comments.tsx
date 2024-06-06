@@ -1,22 +1,27 @@
 'use client';
 
-export default function Comments() {
-  const comments = [
-    {
-      id: 1,
-      user: "User 1",
-      comment: "Comment 1",
-    },
-    {
-      id: 2,
-      user: "User 2",
-      comment: "Comment 2",
-    },
-  ];
+import Loading from '../components/Loading';
+import { trpc } from "../app/_trpc/client";
+
+type CommentsProps = {
+  productId: number;
+};
+
+export default function Comments(props: CommentsProps) {
+  const { productId } = props;
+  const response = trpc.getCommentsByProductId.useQuery(Number(productId));
+  if (response.error) {
+    return <div>Error: {response.error.message}</div>;
+  }
+  const comments = response.data;
+  if (!comments) {
+    return <Loading />;
+  }
   return (
     <div className="lg:w-4/5 mx-auto mt-8">
       <h2 className="text-xl font-semibold mb-4">Comments</h2>
       <div className="flex flex-col space-y-4">
+        {comments.length === 0 && <p>No comments yet</p>}
         {comments.map((comment) => (
           <div key={comment.id} className="flex flex-col border border-gray-300 rounded p-4">
             <div className="flex items-center mb-2">
@@ -27,7 +32,7 @@ export default function Comments() {
                 {comment.user}
               </h3>
             </div>
-            <p>{comment.comment}</p>
+            <p>{comment.content}</p>
           </div>
         ))}
       </div>

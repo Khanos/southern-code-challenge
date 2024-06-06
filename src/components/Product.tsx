@@ -9,7 +9,7 @@ export default function Product(props: Item) {
         {modelFileName}
       </div>
       <h2>{name}</h2>
-      <p>{description}</p>
+      <p className="line-clamp-2">{description}</p>
       <p>{modelFileName}</p>
       <Likes likes={likes} dislikes={dislikes} />
       <div className="flex justify-center mt-4">

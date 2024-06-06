@@ -35,14 +35,14 @@ export default function Product(props: { params: RouteParams }) {
           <div className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"></div>
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">Lego Collection</h2>
-            <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">{product.name} {product.id}</h1>
+            <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">{product.name} - id: {product.id}</h1>
             <p className="leading-relaxed mb-4">{product.description}</p>
             <div className="flex justify-end">
-              <Likes likes={product.likes} dislikes={product.dislikes} />
+              <Likes likes={product.likes || 0} dislikes={product.dislikes || 0} />
             </div>
           </div>
         </div>
-        <Comments />
+        <Comments productId={product.id}/>
       </div>
     </section>
   )
