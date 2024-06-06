@@ -1,0 +1,1 @@
+ALTER TABLE "comments" ADD CONSTRAINT "comments_id_unique" UNIQUE("id");
