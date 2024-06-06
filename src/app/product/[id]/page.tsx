@@ -42,7 +42,7 @@ export default function Product(props: { params: RouteParams }) {
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">{product.name} - id: {product.id}</h1>
             <p className="leading-relaxed mb-4">{product.description}</p>
             <div className="flex justify-end">
-              <Likes likes={product.likes || 0} dislikes={product.dislikes || 0} />
+              <Likes productId={product.id} likes={product.likes || 0} dislikes={product.dislikes || 0} />
             </div>
           </div>
         </div>
