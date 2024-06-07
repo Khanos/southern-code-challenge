@@ -103,7 +103,7 @@ You can view the live demo [here](https://southern-code-challenge-6ywwa1e6w-khan
 ## Installation Instructions
 First, clone the repository:
 ```bash
-$ git clone https://github.com/Khanos/southern-code-challenge
+$ git clone git@github.com:Khanos/southern-code-challenge.git
 ```
 
 Then, install the dependencies:
@@ -182,9 +182,9 @@ $ curl 'https://southern-code-challenge-6ywwa1e6w-khanos-projects.vercel.app/api
 - [x] Implement a backend API to manage likes. (Refactor Likes component to use the API)
 - [x] Implement a backend API to manage comments. (Refactor Comments component to use the API)
 - [x] Create a README file with instructions on how to set up and run the project locally.
-- [-] Add test coverage for critical parts of the application. Probably jest and react-testing-library.
 - [x] Improve the UI with better styling. (Tailwind CSS). * Needs more love *
 - [-] Add a custom domain to the Vercel deployment. ([3dproduct.epilef.app](https://epilef.org))
+- [-] Add test coverage for critical parts of the application. Probably jest and react-testing-library.
 - [-] Send email to Southern Code's interviewers with the repository link.
 - [-] Invite Southern Code's interviewers to the repository.
 
