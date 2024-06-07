@@ -3,6 +3,7 @@ import {
   integer,
   text,
   timestamp,
+  serial,
 } from 'drizzle-orm/pg-core'
 import { InferSelectModel, InferInsertModel } from 'drizzle-orm'
 
@@ -26,7 +27,7 @@ export type NewProduct = InferInsertModel<typeof ProductsTable>
 export const CommentsTable = pgTable(
   'comments',
   {
-    id: integer('id').primaryKey().unique(),
+    id: serial('id').primaryKey().unique(),
     productId: integer('productId').references(() => ProductsTable.id),
     user: text('user').notNull(),
     content: text('content').notNull(),

@@ -134,37 +134,31 @@ const newProducts: NewProduct[] = [
 
 const newComments: NewComment[] = [
   {
-    id: 1,
     productId: 1,
     user: "Test User 1",
     content: "Comment 1,  in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except ",
   },
   {
-    id: 2,
     productId: 1,
     user: "Test User 2",
     content: "Comment 2,  ate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis",
   },
   {
-    id: 3,
     productId: 1,
     user: "Test User 3",
     content: "Comment 3,  distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis",
   },
   {
-    id: 4,
     productId: 2,
     user: "Test User 4",
     content: "Comment 4,  voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et",
   },
   {
-    id: 5,
     productId: 4,
     user: "Test User 5",
     content: "Comment 5,  voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores",
   },
   {
-    id: 6,
     productId: 2,
     user: "Test User 6",
     content: "Comment 6,  alias consequatur, aut perferendis doloribus asperiores repellat. ",

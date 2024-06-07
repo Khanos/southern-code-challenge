@@ -3,7 +3,7 @@ import { mockProduct, mockProducts } from "../mocks";
 import { eq, lt, gte, ne } from 'drizzle-orm';
 import { db } from "../../drizzle/db";
 import { ProductsTable, CommentsTable } from "../../drizzle/schema";
-import type { SetLikesInput } from "../types";
+import type { SetLikesInput, SetCommentsInput } from "../types";
 
 export const appRouter = router({
   getProducts: publicProcedure.query(async () => {
@@ -45,7 +45,7 @@ export const appRouter = router({
   }).query(async (val) => {
     const { input } = val;
     try {
-      const result = await db.select().from(CommentsTable).where(eq(CommentsTable.productId, Number(input)));
+      const result = await db.select().from(CommentsTable).where(eq(CommentsTable.productId, Number(input))).orderBy(CommentsTable.id);
       if (result && !result.length) {
         throw new Error("No comments found");
       }
@@ -101,6 +101,66 @@ export const appRouter = router({
     } catch (error) {
       console.error(error);
       return null;
+    }
+  }),
+  addComment: publicProcedure.input((val: unknown) => {
+    const input = val as SetCommentsInput
+    if (input === null || typeof input !== "object") {
+      throw new Error("Expected an object");
+    }
+    return input;
+  }).mutation(async(val) => {
+    const { input } = val;
+    try {
+      const result = await db.insert(CommentsTable).values({
+        productId: input.id,
+        user: input.user,
+        content: input.content,
+      }).returning();
+      if (!result) {
+        throw new Error("Comment not added");
+      }
+      return result;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }),
+  editComment: publicProcedure.input((val: unknown) => {
+    const input = val as SetCommentsInput
+    if (input === null || typeof input !== "object") {
+      throw new Error("Expected an object");
+    }
+    return input;
+  }).mutation(async(val) => {
+    const { input } = val;
+    try {
+      const result = await db.update(CommentsTable).set({ user: input.user, content: input.content }).where(eq(CommentsTable.id, Number(input.id)));
+      if (!result) {
+        throw new Error("Comment not updated");
+      }
+      return true;
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
+  }),
+  deleteComment: publicProcedure.input((val: unknown) => {
+    if (val === null || typeof val !== "number") {
+      throw new Error("Expected an id");
+    }
+    return val as number;
+  }).mutation(async(val) => {
+    const { input } = val;
+    try {
+      const result = await db.delete(CommentsTable).where(eq(CommentsTable.id, Number(input)));
+      if (!result) {
+        throw new Error("Comment not deleted");
+      }
+      return true;
+    } catch (error) {
+      console.error(error);
+      return false;
     }
   }),
 });
