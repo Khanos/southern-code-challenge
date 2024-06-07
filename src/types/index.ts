@@ -18,3 +18,9 @@ export interface SetLikesInput {
   likes: number;
   dislikes: number;
 }
+
+export interface SetCommentsInput {
+  id: number;
+  user: string;
+  content: string;
+}

@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS "comments" (
-	"id" integer PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"productId" integer,
 	"user" text NOT NULL,
 	"content" text NOT NULL,

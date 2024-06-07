@@ -34,7 +34,8 @@ export default function Product(props: { params: RouteParams }) {
       </div>
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
-          <div className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200">
+          <div className="lg:w-1/2 w-full min-h-[30rem] object-cover object-center rounded border border-gray-200 cursor-move">
+            
             <ModelBox modelFileName={product.modelFileName} />
           </div>
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
