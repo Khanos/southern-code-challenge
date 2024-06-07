@@ -26,16 +26,15 @@ export default function Product(props: { params: RouteParams }) {
   }
 
   return (
-    <section className="text-gray-700 body-font overflow-hidden bg-white p-4">
+    <section className="text-gray-700 body-font overflow-hidden bg-gray-100 bg-opacity-80 p-4 mt-10 rounded-md shadow-md">
       <div className='flex justify-center'>
         <a href='/' className="text-gray-500 hover:text-gray-700 text-lg underline">
           Go back
         </a>
       </div>
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 py-5 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
-          <div className="lg:w-1/2 w-full min-h-[30rem] object-cover object-center rounded border border-gray-200 cursor-move">
-            
+          <div className="lg:w-1/2 w-full min-h-[30rem] object-cover object-center rounded border bg-white border-gray-200 cursor-move">
             <ModelBox modelFileName={product.modelFileName} />
           </div>
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
