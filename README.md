@@ -143,9 +143,9 @@ The API endpoints are managed by tRPC.
 
 ### For Products
 ```bash
-$ curl https://southern-code-challenge-6ywwa1e6w-khanos-projects.vercel.app/api/trpc/getProducts
+$ curl https://southern-code-challenge-liard.vercel.app/api/trpc/getProducts
 
-$ curl 'https://southern-code-challenge-6ywwa1e6w-khanos-projects.vercel.app/api/trpc/getProductById?batch=1&input=%7B%220%22%3A1%7D' \
+$ curl 'https://southern-code-challenge-liard.vercel.app/api/trpc/getProductById?batch=1&input=%7B%220%22%3A1%7D' \
   -H 'Accept: */*' \
   -H 'Accept-Language: es-419,es;q=0.9' \
   -H 'Connection: keep-alive' \
@@ -160,6 +160,8 @@ $ curl 'https://southern-code-challenge-6ywwa1e6w-khanos-projects.vercel.app/api
   -H 'sec-ch-ua-mobile: ?0' \
   -H 'sec-ch-ua-platform: "macOS"'
 ```
+
+You can find the rest of api endpoints on `src/server/index.ts`
 
 ## Personal Checklist
 - [x] Create a private GitHub repository for the project.
